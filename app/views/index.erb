@@ -1,9 +1,12 @@
 <h1>All the God Recipes Only Here, in this Place</h1>
 
-<% @recipes.each.with_index(1) do |recipe, i| %>
-  <h3>Recipe <%=i%></h3>
-  <p>Recipe Name: <%=recipe.name%></p>
-  <p>Recipe Ingredients: <%=recipe.igredients%></p>
-  <p>Recipe Cook Time: <%=recipe.cook_time%></p>
+<h3>Recipes</h3>
+<ol>
+  <% @recipes.each do |recipe| %>
 
-<% end %>
+    <li>Recipe Name: <%=recipe.name%> <br>
+    <a href="/recipes/<%=recipe.id%>">Go to Recipe</a>
+    </li>
+
+  <% end %>
+</ol>
