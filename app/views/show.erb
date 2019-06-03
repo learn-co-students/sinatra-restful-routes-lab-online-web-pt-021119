@@ -1,0 +1,8 @@
+<h1>Here is your recipe for <%=@recipe.name%></h1>
+<h2>It contains: <%=@recipe.ingredients%>.</h2>
+<p>Please allow at least <%=@recipe.cook_time%> min of unabated hunger.</p>
+
+<form action='/recipes/<%=@recipe.id%>' method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>
