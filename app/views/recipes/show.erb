@@ -1,0 +1,27 @@
+
+
+
+<h1><%= @recipe.name %></h1>
+<em>Cooking Time: <%= @recipe.cook_time %></em>
+
+<h2>Ingredients</h2>
+<p><%= @recipe.ingredients %></p>
+
+<p>
+  <form action="/recipes/<%= @recipe.id %>" method="post">
+  <a href="javascript:history.back()">
+    <button>Go back</button>
+  </a>
+  <br>
+  <a href="/recipes/<%= @recipe.id %>/edit">
+    <button>Edit <%= @recipe.name %></button>
+  </a>
+  <br>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" id="delete" name="" value="Delete <%= @recipe.name %>">
+  <br>
+  <a href="/recipes">
+    <button>All recipes</button>
+  </a>
+  </form>
+</p>

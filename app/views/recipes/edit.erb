@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Edit <%= @recipe.name %></title>
+  </head>
+  <body>
+    <form action="/recipes/<%= @recipe.id %>" method="post">
+      <p>
+        <a href="javascript:history.back()">
+          <button>Go back</button>
+        </a>
+      </p>
+      <input type="hidden" name="_method" value="patch">
+      <p>
+        <label for="name">Recipe name:</label>
+        <input type="text" name="name" value="<%= @recipe.name %>">
+      </p>
+      <p>
+        <label for="ingredients">Ingredients:</label>
+        <input type="text" name="ingredients" value="<%= @recipe.ingredients %>">
+      </p>
+      <p>
+        <label for="cook_time">Cooking time:</label>
+        <input type="text" name="cook_time" value="<%= @recipe.cook_time %>">
+      </p>
+      <p><input type="submit" name="" value="Save my changes"></p>
+    </form>
+  </body>
+</html>
