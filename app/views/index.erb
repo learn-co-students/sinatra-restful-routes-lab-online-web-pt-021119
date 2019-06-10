@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Nana's Best Recipes</h1>
+    <% if @recipes.empty? %>
+    <p>There are no recipes in the database</p>
+    <% else %>
+    <% @recipes.each do |r| %>
+    <p><%= r.name %> <a href="/recipes/<%=r.id%>">View</a></p>
+    <% end %>
+    <% end %>
+    <br>
+    <a href="/recipes/new">Create New Recipe</a>
+  </body>
+</html>
